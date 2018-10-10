@@ -21,9 +21,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window = UIWindow()
         window?.makeKeyAndVisible()
 
+        // // set ViewController
+        // window?.rootViewController = ViewController()
+
+
+        //************** add Navigation Bar on Top of Window ******************
+
+        //  Initialize UINavController Instance and Set "ViewController()" to RootViewController
         let navController = UINavigationController(rootViewController: ViewController())
 
-        // set navContraller on window?.rootViewController
+        // set Instance on window?.rootViewController
         window?.rootViewController = navController
 
         return true
