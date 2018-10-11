@@ -71,7 +71,7 @@ class ViewController: UITableViewController {
         navigationItem.title = "Contacts"
         navigationController?.navigationBar.prefersLargeTitles = true
 
-        tableView.register(UITableViewCell.self, forCellReuseIdentifier: cellId)
+        tableView.register(ContactCell.self, forCellReuseIdentifier: cellId)
      // =================================
     }
 
@@ -117,6 +117,8 @@ class ViewController: UITableViewController {
 
         let isExpanded = twoDimensionalArray[section].isExpanded
         twoDimensionalArray[section].isExpanded = !isExpanded
+
+        button.setTitle(isExpanded ? "Open" : "Close", for: .normal)
 
         if isExpanded {
             tableView.deleteRows(at: indexPaths, with: .fade)

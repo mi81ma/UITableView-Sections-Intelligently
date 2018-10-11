@@ -10,6 +10,9 @@ import Foundation
 
 struct ExpandableNames {
 
+    // isExpanded is Boolean
     var isExpanded: Bool
+
+    // name is String Array
     let names: [String]
 }
