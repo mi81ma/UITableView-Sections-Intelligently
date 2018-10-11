@@ -34,6 +34,8 @@ class ViewController: UITableViewController {
         ["Patrikc", "Patty"]
     ]
 
+    var showIndixPaths = false
+
     // *********************************
 
     @objc func  handleShowIndexPath() {
@@ -56,8 +58,12 @@ class ViewController: UITableViewController {
 //        }
 
 
+        showIndixPaths = !showIndixPaths
+
+        let animationStyle = showIndixPaths ? UITableView.RowAnimation.right : .left
+
         // when push "Show Indexpath" Button, slide page right (or left)
-        tableView.reloadRows(at: indexPathsToReload, with: .right)
+        tableView.reloadRows(at: indexPathsToReload, with: animationStyle)
     }
 
 
@@ -118,20 +124,15 @@ class ViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: cellId, for: indexPath)
 
-        // "names Array" element into "name"
-//        let name = self.names[indexPath.row]
-
-//        let name = indexPath.section == 0 ? names[indexPath.row] : cNames[indexPath.row]
-
         let name = twoDimensionalArray[indexPath.section][indexPath.row]
-
 
         // set name to cell.textLabel
         cell.textLabel?.text = name
 
         // "name", "indexPath", "indexPath".row
-        cell.textLabel?.text = "\(name)  Section:\(indexPath.section)   Row:\(indexPath.row)"
-
+        if showIndixPaths {
+            cell.textLabel?.text = "\(name)  Section:\(indexPath.section)   Row:\(indexPath.row)"
+        }
 
         return cell
 
