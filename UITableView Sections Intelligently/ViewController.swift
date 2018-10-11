@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  ViewController.swif
 //  UITableView Sections Intelligently
 //
 //  Created by masato on 10/10/2018.
@@ -11,7 +11,9 @@ import UIKit
 class ViewController: UITableViewController {
 
     // ******** Data Set ***************
-    let cellId = "cellId123123"
+    let cellId = "cellId"
+
+
 
     let names = [
         "Amy", "Bill", "Zack", "Steve", "Jack", "Jill", "Mike"
@@ -28,7 +30,8 @@ class ViewController: UITableViewController {
     let twoDimensionalArray = [
         ["Amy", "Bill", "Zack", "Steve", "Jack", "Jill", "Mike"],
         ["Carl", "Chris", "Christina", "Cameron"],
-        ["David", "Dan"]
+        ["David", "Dan"],
+        ["Patrikc", "Patty"]
     ]
 
     // *********************************
@@ -36,15 +39,32 @@ class ViewController: UITableViewController {
     @objc func  handleShowIndexPath() {
         print("Attemping reload animation indexPaths...")
 
-        let indexPath = IndexPath(row: 0, section: 0)
-        tableView.reloadRows(at: [indexPath], with: .left)
+        // build all the indexPaths we want to reload
+        var indexPathsToReload = [IndexPath]()
+
+        for section in twoDimensionalArray.indices {
+            for row in twoDimensionalArray[section].indices {
+                print(section, row)
+                let indexPath = IndexPath(row: row, section: section)
+                indexPathsToReload.append(indexPath)
+            }
+        }
+
+//        for index in twoDimensionalArray[0].indices {
+//            let indexPath = IndexPath(row: index, section: 0)
+//            indexPathsToReload.append(indexPath)
+//        }
+
+
+        // when push "Show Indexpath" Button, slide page right (or left)
+        tableView.reloadRows(at: indexPathsToReload, with: .right)
     }
 
 
 // ------------------------- vieDidLoad() -------------------------------
 
 
-    // ****  ******
+    // **** Show Indexpath Button ******
     override func viewDidLoad() {
         super.viewDidLoad()
 
