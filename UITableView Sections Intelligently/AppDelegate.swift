@@ -17,7 +17,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
 
 
-        // MARK:- Add the Window Codes to "func application"
+    // MARK:- Add the Window Codes to "func application"
         window = UIWindow()
         window?.makeKeyAndVisible()
 

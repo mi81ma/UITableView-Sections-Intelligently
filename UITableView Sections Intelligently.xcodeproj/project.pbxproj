@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6912B9BC216F43A400B65429 /* ExpandableNames.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6912B9BB216F43A400B65429 /* ExpandableNames.swift */; };
 		69C602C2216DE18000AF915F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69C602C1216DE18000AF915F /* AppDelegate.swift */; };
 		69C602C4216DE18000AF915F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69C602C3216DE18000AF915F /* ViewController.swift */; };
 		69C602C7216DE18000AF915F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 69C602C5216DE18000AF915F /* Main.storyboard */; };
@@ -15,6 +16,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		6912B9BB216F43A400B65429 /* ExpandableNames.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpandableNames.swift; sourceTree = "<group>"; };
 		69C602BE216DE18000AF915F /* UITableView Sections Intelligently.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "UITableView Sections Intelligently.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		69C602C1216DE18000AF915F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		69C602C3216DE18000AF915F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -56,6 +58,7 @@
 			children = (
 				69C602C1216DE18000AF915F /* AppDelegate.swift */,
 				69C602C3216DE18000AF915F /* ViewController.swift */,
+				6912B9BB216F43A400B65429 /* ExpandableNames.swift */,
 				69C602C5216DE18000AF915F /* Main.storyboard */,
 				69C602C8216DE18100AF915F /* Assets.xcassets */,
 				69C602CA216DE18100AF915F /* LaunchScreen.storyboard */,
@@ -135,6 +138,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6912B9BC216F43A400B65429 /* ExpandableNames.swift in Sources */,
 				69C602C4216DE18000AF915F /* ViewController.swift in Sources */,
 				69C602C2216DE18000AF915F /* AppDelegate.swift in Sources */,
 			);
