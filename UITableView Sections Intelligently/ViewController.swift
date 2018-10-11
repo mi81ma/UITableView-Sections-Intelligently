@@ -21,11 +21,36 @@ class ViewController: UITableViewController {
         "Carl", "Chris", "Christina", "Cameron"
     ]
 
+    let dNames = [
+        "David", "Dan"
+    ]
+
+    let twoDimensionalArray = [
+        ["Amy", "Bill", "Zack", "Steve", "Jack", "Jill", "Mike"],
+        ["Carl", "Chris", "Christina", "Cameron"],
+        ["David", "Dan"]
+    ]
+
     // *********************************
 
+    @objc func  handleShowIndexPath() {
+        print("Attemping reload animation indexPaths...")
 
+        let indexPath = IndexPath(row: 0, section: 0)
+        tableView.reloadRows(at: [indexPath], with: .left)
+    }
+
+
+// ------------------------- vieDidLoad() -------------------------------
+
+
+    // ****  ******
     override func viewDidLoad() {
         super.viewDidLoad()
+
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Show Indexpath", style: .plain, target: self, action: #selector(handleShowIndexPath))
+    // *********************************
+
 
     // ******** Navigation Bar *********
         navigationItem.title = "Contacts"
@@ -49,7 +74,7 @@ class ViewController: UITableViewController {
 
     // return the number of sections in the table view
     override func numberOfSections(in tableView: UITableView) -> Int {
-        return 2
+        return twoDimensionalArray.count
     }
 
      // *********************************
@@ -61,10 +86,12 @@ class ViewController: UITableViewController {
 
     // ************** Cell ***************
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if section == 0 {
-            return names.count
-        }
-        return cNames.count
+
+        return twoDimensionalArray[section].count
+//        if section == 0 {
+//            return names.count
+//        }
+//        return cNames.count
     }
 
 
@@ -74,14 +101,16 @@ class ViewController: UITableViewController {
         // "names Array" element into "name"
 //        let name = self.names[indexPath.row]
 
-        let name = indexPath.section == 0 ? names[indexPath.row] : cNames[indexPath.row]
+//        let name = indexPath.section == 0 ? names[indexPath.row] : cNames[indexPath.row]
+
+        let name = twoDimensionalArray[indexPath.section][indexPath.row]
 
 
         // set name to cell.textLabel
         cell.textLabel?.text = name
 
         // "name", "indexPath", "indexPath".row
-        cell.textLabel?.text = "\(name) Section:\(indexPath.section) Row:\(indexPath.row)"
+        cell.textLabel?.text = "\(name)  Section:\(indexPath.section)   Row:\(indexPath.row)"
 
 
         return cell
